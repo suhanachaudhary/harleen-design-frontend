@@ -49,9 +49,9 @@ const UserDetail = () => {
         <img
           className="w-36 h-36 rounded-full object-cover border-4 border-gray-200 shadow-md mb-4"
           src={
-            user.profile_image
-              ? `https://harleen-design-backend.onrender.com${user.profile_image}`
-              : "https://img.freepik.com/premium-vector/user-icon-icon_1076610-59410.jpg"
+            user.profile_image?.startsWith("http")
+              ? user.profile_image
+              : `https://harleen-design-backend.onrender.com${user.profile_image}`
           }
           alt="avatar"
         />
